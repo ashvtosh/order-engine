@@ -1,3 +1,4 @@
+import './worker';
 import Fastify from 'fastify';
 import websocket from '@fastify/websocket';
 import { orderQueue, orderQueueEvents } from './queue';
