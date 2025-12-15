@@ -47,8 +47,9 @@ const startServer = async () => {
         });
     });
     try {
-        await server.listen({ port: 3000 });
-        console.log('Server running on http://localhost:3000');
+        const port = Number(process.env.PORT) || 3000;
+        await server.listen({ port, host: '0.0.0.0' });
+        console.log(`Server running on port ${port}`);
     } catch (err) {
         server.log.error(err);
         process.exit(1);
